@@ -22,3 +22,20 @@ function operator(string, num1, num2) {
     else if(string === 'multiply') return multiply(num1, num2);
     else if(string === 'divide') return divide(num1, num2);
  }
+
+
+ // division click event
+document.getElementById('divide').addEventListener('click', operator())
+
+// multiplication click event
+document.getElementById('multiply').addEventListener('click'), operator()
+
+// subtraction click event
+document.getElementById('subtract').addEventListener('click', operator())
+
+// addition click event 
+document.getElementById('add').addEventListener('click', operator())
+
+// initiate variable to display in calculator screen
+let display;
+
