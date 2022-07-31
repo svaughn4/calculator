@@ -12,11 +12,13 @@
     padding-bottom: 5px;
 } 
 
-.display{ 
+#display{ 
     font-size: 30px; 
     background-color: white;
     width: auto;
     height: 75px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: end;
 }
 
