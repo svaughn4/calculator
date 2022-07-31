@@ -26,9 +26,9 @@ function operator(string, num1, num2) {
 
 
 // initiate display variable to show in screen
-let mainNum = 3;
-let display = document.getElementById('display')
-display.innerText= mainNum;
+let display = document.getElementById('display');
+let content = document.createTextNode("");
+display.appendChild(content);
 
 
  // division click event
@@ -43,22 +43,12 @@ display.innerText= mainNum;
 // // addition click event 
 // document.getElementById('add').addEventListener('click', operator())
 
+// clear click event 
+document.getElementById('clear').addEventListener('click', () => content.nodeValue = "")
 
 // add numeric values as click events to digits
-const nums = document.querySelector('.nums')
-const digChildren = nums.childNodes;
-
-// digChildren.forEach(function(item){ 
-//     let x = Number(item.textContent);
-//     console.log(item, x); 
-//     item.addEventListener('click', update(x));
-// });
-
 for(let i = 0; i < 10; i++) { 
-    //console.log((`${i}`));
     const button = document.getElementById((`${i}`));
-    button.addEventListener('click', () => { 
-        display.innerText = (`${i}`); 
-    });
-    console.log(button);
+    button.addEventListener('click', () => {
+        content.nodeValue = (`${i}`) });
 }
