@@ -106,6 +106,7 @@ document.getElementById('equal').addEventListener('click', () => {
 // clear click event 
 document.getElementById('clear').addEventListener('click', () => { 
     nums.length = operations.length = 0;
+    current.dig = '';
     content.nodeValue = "";
 })
 
