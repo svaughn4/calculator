@@ -2,14 +2,17 @@
     background-color: lightblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
-    width: 500px;
+    width: 400px;
     height: 550px;
     display: flex;
     flex-direction: column; 
     gap: 20px;
     padding: 40px;
-    padding-top: 5px;
+    padding-top: 20px;
     padding-bottom: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10%;
 } 
 
 #display{ 
@@ -20,6 +23,7 @@
     padding-left: 10px;
     padding-right: 10px;
     text-align: end;
+    border-radius: 8%;
 }
 
 button{ 
@@ -32,14 +36,15 @@ button{
 .buttons{
     display: flex; 
     justify-content: space-between;
-    gap: 100px;
+    gap: 20px;
 
 }
 
 .digits{ 
     display: flex; 
     flex-wrap: wrap; 
-    gap: 8px;
+    gap: 8px; 
+    font-size: 30px;
 }
 
 .functions button{ 
@@ -54,4 +59,20 @@ button{
 
 #clear{
     padding: 18px;
+    background-color: antiquewhite;
+}
+
+#back{ 
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: azure;
+} 
+
+#decimal{ 
+    background-color:blanchedalmond;
+}
+
+body{ 
+    display: flex;
+    justify-content: center;
 }
