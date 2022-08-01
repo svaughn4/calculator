@@ -31,36 +31,55 @@ let content = document.createTextNode("");
 display.appendChild(content);
 
 // initiate variables to store the two input nums
-let one;
-let two;
+let nums = new Array(); 
+let operations = new Array(); 
+let current = new Object();
+current.dig = "";
 
 
  // division click event
 document.getElementById('divide').addEventListener('click', () => { 
-    let val = document.getElementById('divide').innerText;
+    let val = document.getElementById('divide').innerText;  
+    nums.push(Number(current.dig));
+    operations.push(val);
     content.nodeValue+= val;
+    current.dig = "";
 })
 
 // multiplication click event
 document.getElementById('multiply').addEventListener('click', () => {
-    let val = document.getElementById('multiply').innerText;
-    content.nodeValue+= val;
+    let val = document.getElementById('multiply').innerText; 
+    nums.push(Number(current.dig)); 
+    operations.push(val);
+    content.nodeValue+= val;  
+    current.dig = "";
 } )
 
 // // subtraction click event
 document.getElementById('subtract').addEventListener('click', () => {
-    let val = document.getElementById('subtract').innerText;
-    content.nodeValue+= val;
+    let val = document.getElementById('subtract').innerText;  
+    nums.push(Number(current.dig)); 
+    operations.push(val);
+    content.nodeValue+= val; 
+    current.dig = "";
 })
 
 // addition click event 
 document.getElementById('add').addEventListener('click', () => { 
     let val = document.getElementById('add').innerText;
+    nums.push(Number(current.dig)); 
+    operations.push(val);
     content.nodeValue+= val;
+    current.dig = "";
 })
 
 // equal click event aka perform operation
-document.getElementById('equal').addEventListener('click', operator())
+document.getElementById('equal').addEventListener('click', () => { 
+    let val = document.getElementById('equal').innerText;
+    nums.push(Number(current.dig));
+    current.dig = "";
+    // update content.nodeValue to display the solution
+})
 
 // clear click event 
 document.getElementById('clear').addEventListener('click', () => content.nodeValue = "")
@@ -69,10 +88,7 @@ document.getElementById('clear').addEventListener('click', () => content.nodeVal
 for(let i = 0; i < 10; i++) { 
     const button = document.getElementById((`${i}`));
     button.addEventListener('click', () => {
+        current.dig+= (`${i}`);
         content.nodeValue+= (`${i}`) });
 }
 
-// parse numbers in content field
-function parse() { 
-    
-}
