@@ -112,9 +112,15 @@ document.getElementById('clear').addEventListener('click', () => {
 // add numeric values as click events to digits
 for(let i = 0; i < 10; i++) { 
     const button = document.getElementById((`${i}`));
-    button.addEventListener('click', () => {
-        current.dig+= (`${i}`);
-        content.nodeValue+= (`${i}`) });
+    button.addEventListener('click', () => { 
+        if(current.dig == '0') { 
+            current.dig=(`${i}`) 
+            content.nodeValue=(`${i}`) 
+        } else{
+            current.dig+= (`${i}`);
+            content.nodeValue+= (`${i}`); 
+        }
+    })
 }
 
 // add decimal point to number 
