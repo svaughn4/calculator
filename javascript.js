@@ -23,7 +23,12 @@ function multiply(a, b) {
 }
 
 function divide(a, b) { 
-    return a / b;
+    if(b === 0) { 
+        content.nodeValue = ""; 
+        current.dig = "";
+        alert("Cannot divide by 0")
+        return "";
+    } else return a / b;
 }
 
 // reads through the nums and operations array to reduce to single value 
@@ -93,7 +98,6 @@ document.getElementById('add').addEventListener('click', () => {
 
 // equal click event aka perform operation
 document.getElementById('equal').addEventListener('click', () => { 
-    let val = document.getElementById('equal').innerText;
     nums.push(Number(current.dig));
     current.dig = ""; 
     solution();
@@ -113,3 +117,18 @@ for(let i = 0; i < 10; i++) {
         content.nodeValue+= (`${i}`) });
 }
 
+// add decimal point to number 
+document.getElementById('decimal').addEventListener('click', () => { 
+    if(content.nodeValue.includes('.')) { 
+        alert("Invalid decimal")
+    } else {
+        current.dig+='.';
+        content.nodeValue+='.';
+    }
+})
+
+// backspace button 
+document.getElementById('back').addEventListener('click', () => { 
+    content.nodeValue = content.nodeValue.slice(0, -1);
+    current.dig = current.dig.slice(0, -1);
+})
